@@ -29,12 +29,12 @@ public class RegisterUserController {
     ResultMapper resultMapper;
 
     @PostMapping
-    public ResponseEntity<Response<RegisterUserResultWebModel>> registerUser(@RequestBody RegisterUserWebModel model) {
-        RegisterUserResult result = registerUserInputPort.
-                registerUser(commandMapper.createRegisterUserCommand(model));
+    public ResponseEntity<Response<RegisterUserResponse>> registerUser(@RequestBody RegisterUserRequest registerUserRequest) {
+        RegisterUserResult registerUserResult = registerUserInputPort.
+                registerUser(commandMapper.createRegisterUserCommand(registerUserRequest));
         return ResponseEntity.ok(
                 new Response<>(true,
-                        resultMapper.createRegisterUserResultWebModel(result),
+                        resultMapper.createRegisterUserResponse(registerUserResult),
                         null,
                         null)
         );
@@ -42,14 +42,14 @@ public class RegisterUserController {
 
 
     @Value
-    static class RegisterUserWebModel {
+    static class RegisterUserRequest {
         String username;
         String password;
         String email;
     }
 
     @Value
-    static class RegisterUserResultWebModel implements ResponseData {
+    static class RegisterUserResponse implements ResponseData {
         Long userId;
     }
 
@@ -59,13 +59,13 @@ public class RegisterUserController {
         @Mapping(source = "username", target = "username.value")
         @Mapping(source = "password", target = "password.value")
         @Mapping(source = "email", target = "email.value")
-        RegisterUserCommand createRegisterUserCommand(RegisterUserWebModel model);
+        RegisterUserCommand createRegisterUserCommand(RegisterUserRequest model);
     }
 
     @Mapper(unmappedSourcePolicy = ReportingPolicy.WARN, unmappedTargetPolicy = ReportingPolicy.WARN, componentModel = "spring")
     interface ResultMapper {
         @Mapping(source = "userId.value", target = "userId")
-        RegisterUserResultWebModel createRegisterUserResultWebModel(RegisterUserResult result);
+        RegisterUserResponse createRegisterUserResponse(RegisterUserResult result);
     }
 
 }

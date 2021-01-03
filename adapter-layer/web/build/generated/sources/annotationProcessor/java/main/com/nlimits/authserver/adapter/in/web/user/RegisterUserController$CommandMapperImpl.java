@@ -1,7 +1,7 @@
 package com.nlimits.authserver.adapter.in.web.user;
 
 import com.nlimits.authserver.adapter.in.web.user.RegisterUserController.CommandMapper;
-import com.nlimits.authserver.adapter.in.web.user.RegisterUserController.RegisterUserWebModel;
+import com.nlimits.authserver.adapter.in.web.user.RegisterUserController.RegisterUserRequest;
 import com.nlimits.authserver.application.user.application.port.in.RegisterUserInputPort.RegisterUserCommand;
 import com.nlimits.authserver.application.user.domain.User.Email;
 import com.nlimits.authserver.application.user.domain.User.Password;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 class RegisterUserController$CommandMapperImpl implements CommandMapper {
 
     @Override
-    public RegisterUserCommand createRegisterUserCommand(RegisterUserWebModel model) {
+    public RegisterUserCommand createRegisterUserCommand(RegisterUserRequest model) {
         if ( model == null ) {
             return null;
         }
@@ -36,42 +36,42 @@ class RegisterUserController$CommandMapperImpl implements CommandMapper {
         return registerUserCommand;
     }
 
-    protected Username registerUserWebModelToUsername(RegisterUserWebModel registerUserWebModel) {
-        if ( registerUserWebModel == null ) {
+    protected Username registerUserWebModelToUsername(RegisterUserController.RegisterUserRequest registerUserRequest) {
+        if (registerUserRequest == null ) {
             return null;
         }
 
         String value = null;
 
-        value = registerUserWebModel.getUsername();
+        value = registerUserRequest.getUsername();
 
         Username username = new Username( value );
 
         return username;
     }
 
-    protected Password registerUserWebModelToPassword(RegisterUserWebModel registerUserWebModel) {
-        if ( registerUserWebModel == null ) {
+    protected Password registerUserWebModelToPassword(RegisterUserController.RegisterUserRequest registerUserRequest) {
+        if (registerUserRequest == null ) {
             return null;
         }
 
         String value = null;
 
-        value = registerUserWebModel.getPassword();
+        value = registerUserRequest.getPassword();
 
         Password password = new Password( value );
 
         return password;
     }
 
-    protected Email registerUserWebModelToEmail(RegisterUserWebModel registerUserWebModel) {
-        if ( registerUserWebModel == null ) {
+    protected Email registerUserWebModelToEmail(RegisterUserController.RegisterUserRequest registerUserRequest) {
+        if (registerUserRequest == null ) {
             return null;
         }
 
         String value = null;
 
-        value = registerUserWebModel.getEmail();
+        value = registerUserRequest.getEmail();
 
         Email email = new Email( value );
 

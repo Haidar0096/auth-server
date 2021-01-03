@@ -1,6 +1,6 @@
 package com.nlimits.authserver.adapter.in.web.user;
 
-import com.nlimits.authserver.adapter.in.web.user.RegisterUserController.RegisterUserResultWebModel;
+import com.nlimits.authserver.adapter.in.web.user.RegisterUserController.RegisterUserResponse;
 import com.nlimits.authserver.adapter.in.web.user.RegisterUserController.ResultMapper;
 import com.nlimits.authserver.application.user.application.port.in.RegisterUserInputPort.RegisterUserResult;
 import com.nlimits.authserver.application.user.domain.User.UserId;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 class RegisterUserController$ResultMapperImpl implements ResultMapper {
 
     @Override
-    public RegisterUserResultWebModel createRegisterUserResultWebModel(RegisterUserResult result) {
+    public RegisterUserResponse createRegisterUserResponse(RegisterUserResult result) {
         if ( result == null ) {
             return null;
         }
@@ -25,7 +25,7 @@ class RegisterUserController$ResultMapperImpl implements ResultMapper {
 
         userId = resultUserIdValue( result );
 
-        RegisterUserResultWebModel registerUserResultWebModel = new RegisterUserResultWebModel( userId );
+        RegisterUserController.RegisterUserResponse registerUserResultWebModel = new RegisterUserController.RegisterUserResponse( userId );
 
         return registerUserResultWebModel;
     }
