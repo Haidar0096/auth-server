@@ -4,3 +4,5 @@ com/nlimits/authserver/adapter/in/web/user/RegisterUserController.java
  com.nlimits.authserver.adapter.in.web.user.RegisterUserController$RegisterUserResultWebModel
  com.nlimits.authserver.adapter.in.web.user.RegisterUserController$RegisterUserWebModel
  com.nlimits.authserver.adapter.in.web.user.RegisterUserController$ResultMapper
+com/nlimits/authserver/adapter/in/web/user/GlobalUserExceptionHandler.java
+ com.nlimits.authserver.adapter.in.web.user.GlobalUserExceptionHandler

@@ -1,12 +1,14 @@
 com/nlimits/authserver/common/annotation/WebAdapter.java
  com.nlimits.authserver.common.annotation.WebAdapter
-com/nlimits/authserver/common/web/Response.java
- com.nlimits.authserver.common.web.Response
+com/nlimits/authserver/common/SelfValidating.java
+ com.nlimits.authserver.common.SelfValidating
 com/nlimits/authserver/common/web/ResponseData.java
  com.nlimits.authserver.common.web.ResponseData
 com/nlimits/authserver/common/annotation/InputPortImpl.java
  com.nlimits.authserver.common.annotation.InputPortImpl
 com/nlimits/authserver/common/annotation/PersistenceAdapter.java
  com.nlimits.authserver.common.annotation.PersistenceAdapter
-com/nlimits/authserver/common/SelfValidating.java
- com.nlimits.authserver.common.SelfValidating
+com/nlimits/authserver/common/web/Response.java
+ com.nlimits.authserver.common.web.Response
+com/nlimits/authserver/common/web/VoidResponseData.java
+ com.nlimits.authserver.common.web.VoidResponseData
