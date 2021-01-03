@@ -4,7 +4,7 @@ import com.nlimits.authserver.application.user.application.port.in.FindUserByIdI
 import com.nlimits.authserver.application.user.application.port.out.LoadUserByIdOutputPort;
 import com.nlimits.authserver.application.user.application.port.out.LoadUserByIdOutputPort.LoadUserByIdCommand;
 import com.nlimits.authserver.application.user.application.port.out.LoadUserByIdOutputPort.LoadUserByIdResult;
-import com.nlimits.authserver.common.InputPortImpl;
+import com.nlimits.authserver.common.annotation.InputPortImpl;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.nlimits.authserver.common;
+package com.nlimits.authserver.common.annotation;
 
 import org.springframework.stereotype.Component;
 
@@ -8,5 +8,5 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
-public @interface PersistenceAdapter {
+public @interface WebAdapter {
 }

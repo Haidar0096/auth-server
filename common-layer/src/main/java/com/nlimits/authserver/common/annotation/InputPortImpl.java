@@ -1,4 +1,4 @@
-package com.nlimits.authserver.common;
+package com.nlimits.authserver.common.annotation;
 
 import org.springframework.stereotype.Component;
 

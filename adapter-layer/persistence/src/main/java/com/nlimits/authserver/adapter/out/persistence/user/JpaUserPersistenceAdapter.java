@@ -2,7 +2,7 @@ package com.nlimits.authserver.adapter.out.persistence.user;
 
 import com.nlimits.authserver.application.user.application.port.out.*;
 import com.nlimits.authserver.application.user.domain.User;
-import com.nlimits.authserver.common.PersistenceAdapter;
+import com.nlimits.authserver.common.annotation.PersistenceAdapter;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;

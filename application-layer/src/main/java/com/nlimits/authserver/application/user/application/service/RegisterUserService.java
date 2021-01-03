@@ -5,7 +5,7 @@ import com.nlimits.authserver.application.user.application.service.exception.Err
 import com.nlimits.authserver.application.user.application.service.exception.UserManagementException;
 import com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort;
 import com.nlimits.authserver.application.user.application.port.out.PersistUserOutputPort;
-import com.nlimits.authserver.common.InputPortImpl;
+import com.nlimits.authserver.common.annotation.InputPortImpl;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;

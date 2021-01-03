@@ -10,6 +10,7 @@
         </processorPath>
         <module name="auth-server.application.test" />
         <module name="auth-server.adapter-layer.persistence.test" />
+        <module name="auth-server.common.main" />
         <module name="auth-server.application.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
