@@ -1,0 +1,8 @@
+com/nlimits/authserver/common/InputPortImpl.java
+ com.nlimits.authserver.common.InputPortImpl
+com/nlimits/authserver/common/WebAdapter.java
+ com.nlimits.authserver.common.WebAdapter
+com/nlimits/authserver/common/PersistenceAdapter.java
+ com.nlimits.authserver.common.PersistenceAdapter
+com/nlimits/authserver/common/SelfValidating.java
+ com.nlimits.authserver.common.SelfValidating

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<local-project language="java" version="5.0.15419" xml-version="3" flavor="j2se">
+  <property name="publish-architecture-artifacts" value="true" />
+  <property name="force-classpath" value="false" />
+  <property name="project-type" value="classpath" />
+  <property name="hide-externals" value="true" />
+  <property name="parse-archive-in-archive" value="false" />
+  <property name="include-injected-dependency" value="false" />
+  <property name="relative-to" value="const(THIS_FILE)" />
+  <property name="action-set-mod" value="1" />
+  <property name="detail-mode" value="true" />
+  <property name="restructuring-system-file" value="structure101-actions.xml" />
+  <property name="hide-deprecated" value="false" />
+  <property name="resolve-name-clashes" value="true" />
+  <property name="project-excluded" />
+  <property name="show-needs-to-compile" value="false" />
+  <property name="physical-layering-system-file" value="structure101-spec.xml" />
+  <classpath>
+    <classpathentry kind="lib" path="adapter-layer/persistence/build/classes/java/main" module="auth-server___adapter-layer___persistence___main" displaymodule="auth-server.adapter-layer.persistence.main" />
+    <classpathentry kind="lib" path="adapter-layer/web/build/classes/java/main" module="auth-server___adapter-layer___web___main" displaymodule="auth-server.adapter-layer.web.main" />
+    <classpathentry kind="lib" path="configuration-layer/build/classes/java/main" module="auth-server___configuration___main" displaymodule="auth-server.configuration.main" />
+    <classpathentry kind="lib" path="common-layer/build/classes/java/main" module="auth-server___common___main" displaymodule="auth-server.common.main" />
+    <classpathentry kind="lib" path="application-layer/build/classes/java/main" module="auth-server___application___main" displaymodule="auth-server.application.main" />
+  </classpath>
+  <pom-root-files />
+  <modules>
+    <module name="configuration" kind="ide-project" />
+    <module name="auth-server___main" kind="ide-project" />
+    <module name="auth-server___configuration" kind="ide-project" />
+    <module name="auth-server___common___main" kind="ide-project" />
+    <module name="auth-server___common" kind="ide-project" />
+    <module name="auth-server___application" kind="ide-project" />
+    <module name="auth-server___adapter" kind="ide-project" />
+    <module name="auth-server___adapter-layer___web" kind="ide-project" />
+    <module name="auth-server___adapter-layer___persistence" kind="ide-project" />
+    <module name="auth-server___adapter-layer" kind="ide-project" />
+    <module name="auth-server" kind="ide-project" />
+    <module name="auth-server___test" kind="ide-project">
+      <requires name="auth-server___main" kind="ide-project" />
+    </module>
+    <module name="auth-server___common___test" kind="ide-project">
+      <requires name="auth-server___common___main" kind="ide-project" />
+    </module>
+    <module name="auth-server___application___main" kind="ide-project">
+      <requires name="auth-server___common___main" kind="ide-project" />
+    </module>
+    <module name="auth-server___application___test" kind="ide-project">
+      <requires name="auth-server___application___main" kind="ide-project" />
+      <requires name="auth-server___common___main" kind="ide-project" />
+    </module>
+    <module name="auth-server___adapter-layer___web___main" kind="ide-project">
+      <requires name="auth-server___application___main" kind="ide-project" />
+      <requires name="auth-server___common___main" kind="ide-project" />
+    </module>
+    <module name="auth-server___adapter-layer___persistence___main" kind="ide-project">
+      <requires name="auth-server___application___main" kind="ide-project" />
+      <requires name="auth-server___common___main" kind="ide-project" />
+    </module>
+    <module name="auth-server___configuration___main" kind="ide-project">
+      <requires name="auth-server___adapter-layer___web___main" kind="ide-project" />
+      <requires name="auth-server___adapter-layer___persistence___main" kind="ide-project" />
+      <requires name="auth-server___application___main" kind="ide-project" />
+    </module>
+    <module name="auth-server___adapter-layer___web___test" kind="ide-project">
+      <requires name="auth-server___adapter-layer___web___main" kind="ide-project" />
+      <requires name="auth-server___application___main" kind="ide-project" />
+      <requires name="auth-server___common___main" kind="ide-project" />
+    </module>
+    <module name="auth-server___adapter-layer___persistence___test" kind="ide-project">
+      <requires name="auth-server___adapter-layer___persistence___main" kind="ide-project" />
+      <requires name="auth-server___application___main" kind="ide-project" />
+      <requires name="auth-server___common___main" kind="ide-project" />
+    </module>
+    <module name="auth-server___configuration___test" kind="ide-project">
+      <requires name="auth-server___configuration___main" kind="ide-project" />
+      <requires name="auth-server___adapter-layer___web___main" kind="ide-project" />
+      <requires name="auth-server___adapter-layer___persistence___main" kind="ide-project" />
+      <requires name="auth-server___application___main" kind="ide-project" />
+    </module>
+  </modules>
+  <modules-in-scope>
+    <module name="auth-server___common" />
+    <module name="auth-server___application" />
+    <module name="auth-server" />
+    <module name="auth-server___common___main" />
+    <module name="auth-server___application___main" />
+    <module name="auth-server___configuration" />
+    <module name="auth-server___adapter-layer" />
+    <module name="auth-server___common___test" />
+    <module name="auth-server___application___test" />
+    <module name="auth-server___adapter-layer___persistence___main" />
+    <module name="auth-server___adapter-layer___persistence___test" />
+    <module name="auth-server___adapter" />
+    <module name="auth-server___main" />
+    <module name="auth-server___adapter-layer___web___main" />
+    <module name="auth-server___adapter-layer___web___test" />
+    <module name="auth-server___configuration___main" />
+    <module name="configuration" />
+    <module name="auth-server___adapter-layer___persistence" />
+    <module name="auth-server___configuration___test" />
+    <module name="auth-server___adapter-layer___web" />
+    <module name="auth-server___test" />
+  </modules-in-scope>
+  <excludes>
+    <exclude expression="*.*&amp;amp;*" active="true" />
+  </excludes>
+  <grid-set sep="." version="5.0.15419" />
+</local-project>

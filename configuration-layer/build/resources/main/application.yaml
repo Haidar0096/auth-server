@@ -1,0 +1,16 @@
+debug: false
+spring:
+  datasource:
+    #TODO: remove credentials when going into a production app
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: haidar
+    password: password
+    url: jdbc:mysql://localhost/spring?serverTimezone=UTC
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
