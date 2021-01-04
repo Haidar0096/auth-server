@@ -17,10 +17,16 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
 
+    //for using validation in tests
+    implementation group: 'org.glassfish', name: 'javax.el', version: '3.0.0'
+    implementation 'javax.el:javax.el-api:3.0.1-b06'
+    //
+
     testCompileOnly 'org.projectlombok:lombok:1.18.16'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation "org.mockito:mockito-core:2.+"
 }
 
 test {

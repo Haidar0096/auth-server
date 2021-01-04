@@ -63,8 +63,7 @@ class JpaUserPersistenceAdapter implements PersistUserOutputPort, LoadUserByEmai
     }
 
     /**
-     * This method is called with the idea in mind being that the user with the given id already exists,
-     * i.e. the caller of this method must first make sure that the user exists or else unwanted results may occur.
+     * Caller of this method must make sure first that the user exists already or else an exception will be thrown
      */
     @Override
     public void updateUserById(UpdateUserByIdCommand command) {

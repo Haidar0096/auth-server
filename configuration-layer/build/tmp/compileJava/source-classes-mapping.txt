@@ -1,2 +1,0 @@
-com/nlimits/authserver/configuration/AuthServerApplication.java
- com.nlimits.authserver.configuration.AuthServerApplication
