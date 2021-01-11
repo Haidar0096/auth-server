@@ -1,8 +1,8 @@
 package com.nlimits.authserver.application.user.application.service;
 
-import com.nlimits.authserver.application.user.application.port.in.UpdateUserByIdInputPort;
-import com.nlimits.authserver.application.user.application.port.out.LoadUserByIdOutputPort;
-import com.nlimits.authserver.application.user.application.port.out.UpdateUserByIdOutputPort;
+import com.nlimits.authserver.application.user.application.port.input.UpdateUserByIdInputPort;
+import com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort;
+import com.nlimits.authserver.application.user.application.port.output.UpdateUserByIdOutputPort;
 import com.nlimits.authserver.application.user.application.service.exception.ErrorCode;
 import com.nlimits.authserver.application.user.application.service.exception.UserManagementException;
 import com.nlimits.authserver.common.annotation.InputPortImpl;
@@ -10,8 +10,8 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
-import static com.nlimits.authserver.application.user.application.port.out.LoadUserByIdOutputPort.LoadUserByIdCommand;
-import static com.nlimits.authserver.application.user.application.port.out.LoadUserByIdOutputPort.LoadUserByIdResult;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdCommand;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdResult;
 
 @InputPortImpl
 @RequiredArgsConstructor

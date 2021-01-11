@@ -1,19 +1,19 @@
 package com.nlimits.authserver.application.user.application.service;
 
-import com.nlimits.authserver.application.user.application.port.in.RegisterUserInputPort;
+import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort;
 import com.nlimits.authserver.application.user.application.service.exception.ErrorCode;
 import com.nlimits.authserver.application.user.application.service.exception.UserManagementException;
-import com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort;
-import com.nlimits.authserver.application.user.application.port.out.PersistUserOutputPort;
+import com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort;
+import com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort;
 import com.nlimits.authserver.common.annotation.InputPortImpl;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
-import static com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort.LoadUserByEmailCommand;
-import static com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort.LoadUserByEmailResult;
-import static com.nlimits.authserver.application.user.application.port.out.PersistUserOutputPort.PersistUserCommand;
-import static com.nlimits.authserver.application.user.application.port.out.PersistUserOutputPort.PersistUserResult;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailCommand;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailResult;
+import static com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserCommand;
+import static com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserResult;
 
 @InputPortImpl
 @RequiredArgsConstructor

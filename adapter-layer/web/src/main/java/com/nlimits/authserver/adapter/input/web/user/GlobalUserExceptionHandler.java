@@ -1,4 +1,4 @@
-package com.nlimits.authserver.adapter.in.web.user;
+package com.nlimits.authserver.adapter.input.web.user;
 
 import com.nlimits.authserver.application.user.application.service.exception.UserManagementException;
 import com.nlimits.authserver.common.web.Response;

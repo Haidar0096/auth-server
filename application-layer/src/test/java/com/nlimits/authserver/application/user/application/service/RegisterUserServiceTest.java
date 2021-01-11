@@ -1,13 +1,13 @@
 package com.nlimits.authserver.application.user.application.service;
 
-import com.nlimits.authserver.application.user.application.port.in.RegisterUserInputPort.RegisterUserCommand;
-import com.nlimits.authserver.application.user.application.port.in.RegisterUserInputPort.RegisterUserResult;
-import com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort;
-import com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort.LoadUserByEmailCommand;
-import com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort.LoadUserByEmailResult;
-import com.nlimits.authserver.application.user.application.port.out.PersistUserOutputPort;
-import com.nlimits.authserver.application.user.application.port.out.PersistUserOutputPort.PersistUserCommand;
-import com.nlimits.authserver.application.user.application.port.out.PersistUserOutputPort.PersistUserResult;
+import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort.RegisterUserCommand;
+import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort.RegisterUserResult;
+import com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort;
+import com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailCommand;
+import com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailResult;
+import com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort;
+import com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserCommand;
+import com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserResult;
 import com.nlimits.authserver.application.user.application.service.exception.ErrorCode;
 import com.nlimits.authserver.application.user.application.service.exception.UserManagementException;
 import org.junit.jupiter.api.BeforeEach;

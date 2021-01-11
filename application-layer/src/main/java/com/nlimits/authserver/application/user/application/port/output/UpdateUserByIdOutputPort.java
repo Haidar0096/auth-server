@@ -1,4 +1,5 @@
-package com.nlimits.authserver.application.user.application.port.in;
+package com.nlimits.authserver.application.user.application.port.output;
+
 
 import com.nlimits.authserver.application.user.domain.User.Email;
 import com.nlimits.authserver.application.user.domain.User.Password;
@@ -11,9 +12,9 @@ import lombok.Value;
 import javax.validation.Valid;
 import java.util.Optional;
 
-public interface UpdateUserByIdInputPort {
+public interface UpdateUserByIdOutputPort {
 
-    void updateUserById(UpdateUserByIdCommand command);
+    void updateUserById(UpdateUserByIdCommand updateUserByIdCommand);
 
     /**
      * Username, password, and email can be null, but id can't be.
@@ -40,8 +41,7 @@ public interface UpdateUserByIdInputPort {
             this.validateSelf();
         }
     }
+
 }
 
 //todo write documentation for this class
-
-//todo check warnings on this class fields

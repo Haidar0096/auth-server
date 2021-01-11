@@ -1,4 +1,4 @@
-package com.nlimits.authserver.application.user.application.port.in;
+package com.nlimits.authserver.application.user.application.port.input;
 
 import com.nlimits.authserver.common.SelfValidating;
 import lombok.EqualsAndHashCode;

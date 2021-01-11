@@ -1,14 +1,13 @@
-package com.nlimits.authserver.adapter.in.web.user;
+package com.nlimits.authserver.adapter.input.web.user;
 
-import com.nlimits.authserver.application.user.application.port.in.RegisterUserInputPort;
-import com.nlimits.authserver.application.user.application.port.in.RegisterUserInputPort.RegisterUserCommand;
-import com.nlimits.authserver.application.user.application.port.in.RegisterUserInputPort.RegisterUserResult;
+import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort;
+import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort.RegisterUserCommand;
+import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort.RegisterUserResult;
 import com.nlimits.authserver.common.annotation.WebAdapter;
 import com.nlimits.authserver.common.web.Response;
 import com.nlimits.authserver.common.web.ResponseData;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import lombok.Value;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

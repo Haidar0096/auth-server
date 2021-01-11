@@ -1,10 +1,10 @@
 package com.nlimits.authserver.application.user.application.service;
 
-import com.nlimits.authserver.application.user.application.port.in.DeleteUserByIdInputPort;
-import com.nlimits.authserver.application.user.application.port.out.DeleteUserByIdOutputPort;
-import com.nlimits.authserver.application.user.application.port.out.LoadUserByIdOutputPort;
-import com.nlimits.authserver.application.user.application.port.out.LoadUserByIdOutputPort.LoadUserByIdCommand;
-import com.nlimits.authserver.application.user.application.port.out.LoadUserByIdOutputPort.LoadUserByIdResult;
+import com.nlimits.authserver.application.user.application.port.input.DeleteUserByIdInputPort;
+import com.nlimits.authserver.application.user.application.port.output.DeleteUserByIdOutputPort;
+import com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort;
+import com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdCommand;
+import com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdResult;
 import com.nlimits.authserver.application.user.application.service.exception.ErrorCode;
 import com.nlimits.authserver.application.user.application.service.exception.UserManagementException;
 import com.nlimits.authserver.common.annotation.InputPortImpl;

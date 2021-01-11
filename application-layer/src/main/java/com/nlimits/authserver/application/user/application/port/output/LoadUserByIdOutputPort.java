@@ -1,4 +1,4 @@
-package com.nlimits.authserver.application.user.application.port.in;
+package com.nlimits.authserver.application.user.application.port.output;
 
 import com.nlimits.authserver.application.user.domain.User.Email;
 import com.nlimits.authserver.application.user.domain.User.UserId;
@@ -10,24 +10,23 @@ import lombok.Value;
 import javax.validation.Valid;
 import java.util.Optional;
 
-public interface FindUserByEmailInputPort {
-
-    Optional<FindUserByEmailResult> findUserByEmail(FindUserByEmailCommand command);
+public interface LoadUserByIdOutputPort {
+    Optional<LoadUserByIdResult> loadUserById(LoadUserByIdCommand command);
 
     @Value
     @EqualsAndHashCode(callSuper = false)
-    class FindUserByEmailCommand extends SelfValidating<FindUserByEmailCommand> {
+    class LoadUserByIdCommand extends SelfValidating<LoadUserByIdCommand> {
         @Valid
-        Email email;
+        UserId userId;
 
-        public FindUserByEmailCommand(Email email) {
-            this.email = email;
+        public LoadUserByIdCommand(UserId userId) {
+            this.userId = userId;
             this.validateSelf();
         }
     }
 
     @Value
-    class FindUserByEmailResult {
+    class LoadUserByIdResult {
         UserId userId;
         Username username;
         Email email;

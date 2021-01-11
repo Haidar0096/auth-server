@@ -1,14 +1,14 @@
 package com.nlimits.authserver.application.user.application.service;
 
-import com.nlimits.authserver.application.user.application.port.in.FindUserByEmailInputPort;
-import com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort;
+import com.nlimits.authserver.application.user.application.port.input.FindUserByEmailInputPort;
+import com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort;
 import com.nlimits.authserver.common.annotation.InputPortImpl;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
-import static com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort.LoadUserByEmailCommand;
-import static com.nlimits.authserver.application.user.application.port.out.LoadUserByEmailOutputPort.LoadUserByEmailResult;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailCommand;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailResult;
 
 @InputPortImpl
 @RequiredArgsConstructor
