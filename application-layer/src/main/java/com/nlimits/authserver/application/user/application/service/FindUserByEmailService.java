@@ -32,3 +32,5 @@ import static com.nlimits.authserver.application.user.application.port.out.LoadU
         );
     }
 }
+
+//todo write documentation for this class

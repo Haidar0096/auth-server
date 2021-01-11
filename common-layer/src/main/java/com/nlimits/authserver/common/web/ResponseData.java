@@ -5,3 +5,5 @@ package com.nlimits.authserver.common.web;
  */
 public interface ResponseData {
 }
+
+//todo write documentation for this class

@@ -32,3 +32,5 @@ public interface LoadUserByIdOutputPort {
         Email email;
     }
 }
+
+//todo write documentation for this class

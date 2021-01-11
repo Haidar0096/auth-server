@@ -6,6 +6,9 @@ import com.nlimits.authserver.application.user.application.port.in.RegisterUserI
 import com.nlimits.authserver.common.annotation.WebAdapter;
 import com.nlimits.authserver.common.web.Response;
 import com.nlimits.authserver.common.web.ResponseData;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.Value;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -41,7 +44,8 @@ public class RegisterUserController {
     }
 
 
-    @Value
+    @Getter
+    @NoArgsConstructor
     static class RegisterUserRequest {
         String username;
         String password;
@@ -69,3 +73,5 @@ public class RegisterUserController {
     }
 
 }
+
+//todo write documentation for this class

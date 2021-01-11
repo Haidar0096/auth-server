@@ -46,3 +46,5 @@ public interface UpdateUserByIdOutputPort {
     }
 
 }
+
+//todo write documentation for this class

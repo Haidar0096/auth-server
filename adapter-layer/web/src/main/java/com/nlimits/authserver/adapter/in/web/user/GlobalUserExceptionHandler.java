@@ -22,3 +22,5 @@ public class GlobalUserExceptionHandler {
     }
 }
 
+//todo write documentation for this class
+

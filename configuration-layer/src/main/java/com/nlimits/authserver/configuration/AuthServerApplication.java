@@ -16,14 +16,6 @@ public class AuthServerApplication {
         SpringApplication.run(AuthServerApplication.class, args);
     }
 
-//    @Bean
-//    public CommandLineRunner run(ApplicationContext appContext) {
-//        return args -> {
-//
-//            String[] beans = appContext.getBeanDefinitionNames();
-//            Arrays.stream(beans).sorted().forEach(System.out::println);
-//
-//        };
-//    }
-
 }
+
+//todo write documentation for this class

@@ -44,3 +44,5 @@ public interface RegisterUserInputPort {
         UserId userId;
     }
 }
+
+//todo write documentation for this class

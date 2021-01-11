@@ -39,3 +39,5 @@ public interface PersistUserOutputPort {
         UserId userId;
     }
 }
+
+//todo write documentation for this class

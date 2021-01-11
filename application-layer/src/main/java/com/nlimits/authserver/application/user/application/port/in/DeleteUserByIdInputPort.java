@@ -23,3 +23,5 @@ public interface DeleteUserByIdInputPort {
         }
     }
 }
+
+//todo write documentation for this class

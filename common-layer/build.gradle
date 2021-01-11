@@ -1,21 +1,9 @@
-plugins {
-    id 'java'
-}
-
-group 'com.nlimits'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    implementation group: 'org.springframework', name: 'spring-context', version: '5.2.12.RELEASE'
+
+    implementation group: 'org.springframework', name: 'spring-context'
+
     implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.2.0.Final'
+
     compileOnly 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
-}
-
-test {
-    useJUnitPlatform()
 }

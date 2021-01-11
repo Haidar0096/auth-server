@@ -46,3 +46,5 @@ class RegisterUserService implements RegisterUserInputPort {
         );
     }
 }
+
+//todo write documentation for this class

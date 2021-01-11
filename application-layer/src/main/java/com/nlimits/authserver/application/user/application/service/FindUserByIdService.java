@@ -30,3 +30,5 @@ class FindUserByIdService implements FindUserByIdInputPort {
         );
     }
 }
+
+//todo write documentation for this class

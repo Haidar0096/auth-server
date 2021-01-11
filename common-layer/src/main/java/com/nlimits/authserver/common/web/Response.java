@@ -9,3 +9,5 @@ public class Response<T extends ResponseData> {
     String message;
     String ErrorCode;
 }
+
+//todo write documentation for this class

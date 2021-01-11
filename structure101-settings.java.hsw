@@ -16,8 +16,8 @@
   <property name="show-needs-to-compile" value="false" />
   <property name="physical-layering-system-file" value="structure101-spec.xml" />
   <classpath>
-    <classpathentry kind="lib" path="adapter-layer/persistence/build/classes/java/main" module="auth-server___adapter-layer___persistence___main" displaymodule="auth-server.adapter-layer.persistence.main" />
     <classpathentry kind="lib" path="adapter-layer/web/build/classes/java/main" module="auth-server___adapter-layer___web___main" displaymodule="auth-server.adapter-layer.web.main" />
+    <classpathentry kind="lib" path="adapter-layer/persistence/build/classes/java/main" module="auth-server___adapter-layer___persistence___main" displaymodule="auth-server.adapter-layer.persistence.main" />
     <classpathentry kind="lib" path="configuration-layer/build/classes/java/main" module="auth-server___configuration___main" displaymodule="auth-server.configuration.main" />
     <classpathentry kind="lib" path="common-layer/build/classes/java/main" module="auth-server___common___main" displaymodule="auth-server.common.main" />
     <classpathentry kind="lib" path="application-layer/build/classes/java/main" module="auth-server___application___main" displaymodule="auth-server.application.main" />
@@ -79,27 +79,27 @@
     </module>
   </modules>
   <modules-in-scope>
-    <module name="auth-server___common" />
+    <module name="auth-server___adapter" />
+    <module name="configuration" />
+    <module name="auth-server___adapter-layer___web" />
+    <module name="auth-server___adapter-layer" />
+    <module name="auth-server___main" />
     <module name="auth-server___application" />
-    <module name="auth-server" />
     <module name="auth-server___common___main" />
     <module name="auth-server___application___main" />
-    <module name="auth-server___configuration" />
-    <module name="auth-server___adapter-layer" />
-    <module name="auth-server___common___test" />
     <module name="auth-server___application___test" />
+    <module name="auth-server___adapter-layer___web___main" />
+    <module name="auth-server___common___test" />
+    <module name="auth-server___adapter-layer___web___test" />
+    <module name="auth-server___configuration" />
     <module name="auth-server___adapter-layer___persistence___main" />
     <module name="auth-server___adapter-layer___persistence___test" />
-    <module name="auth-server___adapter" />
-    <module name="auth-server___main" />
-    <module name="auth-server___adapter-layer___web___main" />
-    <module name="auth-server___adapter-layer___web___test" />
-    <module name="auth-server___configuration___main" />
-    <module name="configuration" />
-    <module name="auth-server___adapter-layer___persistence" />
-    <module name="auth-server___configuration___test" />
-    <module name="auth-server___adapter-layer___web" />
     <module name="auth-server___test" />
+    <module name="auth-server" />
+    <module name="auth-server___common" />
+    <module name="auth-server___configuration___main" />
+    <module name="auth-server___configuration___test" />
+    <module name="auth-server___adapter-layer___persistence" />
   </modules-in-scope>
   <excludes>
     <exclude expression="*.*&amp;amp;*" active="true" />

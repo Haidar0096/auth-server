@@ -33,3 +33,5 @@ public interface FindUserByEmailInputPort {
         Email email;
     }
 }
+
+//todo write documentation for this class

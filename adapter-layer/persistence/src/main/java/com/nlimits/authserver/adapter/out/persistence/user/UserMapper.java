@@ -22,3 +22,5 @@ public interface UserMapper {
     @Mapping(source = "email", target = "email.value")
     User createUser(JpaUser jpaUser);
 }
+
+//todo write documentation for this class

@@ -33,3 +33,5 @@ class JpaUser {
     @Column(nullable = false)
     private LocalDateTime dateUpdated;
 }
+
+//todo write documentation for this class

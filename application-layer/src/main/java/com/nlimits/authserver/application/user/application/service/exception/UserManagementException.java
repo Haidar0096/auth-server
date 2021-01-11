@@ -13,3 +13,5 @@ public class UserManagementException extends RuntimeException {
         this.errorCode = errorCode;
     }
 }
+
+//todo write documentation for this class

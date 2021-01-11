@@ -74,3 +74,5 @@ class JpaUserPersistenceAdapter implements PersistUserOutputPort, LoadUserByEmai
         command.getEmailOptional().ifPresent(emailOptional -> jpaUser.setEmail(emailOptional.getValue()));
     }
 }
+
+//todo write documentation for this class

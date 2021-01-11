@@ -19,3 +19,5 @@ public class LocalDateTimeAttributeConverter implements AttributeConverter<Local
         return timestamp == null ? null : timestamp.toLocalDateTime();
     }
 }
+
+//todo write documentation for this class

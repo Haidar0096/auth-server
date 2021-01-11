@@ -41,3 +41,7 @@ public interface UpdateUserByIdInputPort {
         }
     }
 }
+
+//todo write documentation for this class
+
+//todo check warnings on this class fields

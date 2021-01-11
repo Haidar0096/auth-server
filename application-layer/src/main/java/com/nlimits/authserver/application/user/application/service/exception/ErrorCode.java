@@ -12,3 +12,5 @@ public enum ErrorCode {
 
     private final String value;
 }
+
+//todo write documentation for this class

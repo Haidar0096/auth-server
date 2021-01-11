@@ -93,3 +93,7 @@ class RegisterUserServiceTest {
         }
     }
 }
+
+//todo MAYBE write documentation for test methods in this class
+
+//todo see why tests are failing ( gradle problem, as they were not failing earlier)

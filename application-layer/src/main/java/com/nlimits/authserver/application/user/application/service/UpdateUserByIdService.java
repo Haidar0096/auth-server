@@ -33,3 +33,5 @@ class UpdateUserByIdService implements UpdateUserByIdInputPort {
                         command.getEmailOptional()));
     }
 }
+
+//todo write documentation for this class

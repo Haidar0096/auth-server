@@ -29,3 +29,5 @@ class DeleteUserByIdService implements DeleteUserByIdInputPort {
         deleteUserByIdOutputPort.deleteUserById(new DeleteUserByIdOutputPort.DeleteUserByIdCommand(command.getUserId()));
     }
 }
+
+//todo write documentation for this class

@@ -24,3 +24,7 @@ public abstract class SelfValidating<T> {
             throw new ConstraintViolationException(violations);
     }
 }
+
+//todo write documentation for this class
+
+//todo check warnings in this class
