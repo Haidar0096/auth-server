@@ -14,18 +14,18 @@ import java.util.Optional;
  * Contract for loading the User by Id
  */
 public interface LoadUserByIdOutputPort {
-    Optional<LoadUserByIdResult> loadUserById(LoadUserByIdCommand command);
+    Optional<LoadUserByIdOutputPortResult> loadUserById(LoadUserByIdOutputPortCommand command);
 
     /**
      * Input model for the LoadUserByIdOutputPort
      */
     @Value
     @EqualsAndHashCode(callSuper = false)
-    class LoadUserByIdCommand extends SelfValidating<LoadUserByIdCommand> {
+    class LoadUserByIdOutputPortCommand extends SelfValidating<LoadUserByIdOutputPortCommand> {
         @Valid
         UserId userId;
 
-        public LoadUserByIdCommand(UserId userId) {
+        public LoadUserByIdOutputPortCommand(UserId userId) {
             this.userId = userId;
             this.validateSelf();
         }
@@ -35,7 +35,7 @@ public interface LoadUserByIdOutputPort {
      * Output model for the LoadUserByIdOutputPort
      */
     @Value
-    class LoadUserByIdResult {
+    class LoadUserByIdOutputPortResult {
         UserId userId;
         Username username;
         Email email;

@@ -15,7 +15,7 @@ import java.util.Optional;
  */
 public interface LoadUserByEmailOutputPort {
 
-    Optional<LoadUserByEmailResult> loadUserByEmail(LoadUserByEmailCommand command);
+    Optional<LoadUserByEmailOutputPortResult> loadUserByEmail(LoadUserByEmailOutputPortCommand command);
 
 
     /**
@@ -23,11 +23,11 @@ public interface LoadUserByEmailOutputPort {
      */
     @Value
     @EqualsAndHashCode(callSuper = false)
-    class LoadUserByEmailCommand extends SelfValidating<LoadUserByEmailCommand> {
+    class LoadUserByEmailOutputPortCommand extends SelfValidating<LoadUserByEmailOutputPortCommand> {
         @Valid
         Email email;
 
-        public LoadUserByEmailCommand(Email email) {
+        public LoadUserByEmailOutputPortCommand(Email email) {
             this.email = email;
             this.validateSelf();
         }
@@ -37,7 +37,7 @@ public interface LoadUserByEmailOutputPort {
      * Output model for the LoadUserByEmailOutputPort
      */
     @Value
-    class LoadUserByEmailResult {
+    class LoadUserByEmailOutputPortResult {
         UserId userId;
         Username username;
         Email email;

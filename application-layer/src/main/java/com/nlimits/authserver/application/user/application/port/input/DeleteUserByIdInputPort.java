@@ -12,18 +12,18 @@ import javax.validation.Valid;
  */
 public interface DeleteUserByIdInputPort {
 
-    void deleteUserById(DeleteUserByIdCommand command);
+    void deleteUserById(DeleteUserByIdInputPortCommand command);
 
     /**
      * Input Model of the DeleteUserByIdInputPort
      */
     @Value
     @EqualsAndHashCode(callSuper = false)
-    class DeleteUserByIdCommand extends SelfValidating<DeleteUserByIdCommand> {
+    class DeleteUserByIdInputPortCommand extends SelfValidating<DeleteUserByIdInputPortCommand> {
         @Valid
         UserId userId;
 
-        public DeleteUserByIdCommand(UserId userId) {
+        public DeleteUserByIdInputPortCommand(UserId userId) {
             this.userId = userId;
             this.validateSelf();
         }

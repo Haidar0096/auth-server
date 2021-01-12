@@ -10,10 +10,10 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
-import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailCommand;
-import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailResult;
-import static com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserCommand;
-import static com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserResult;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailOutputPortCommand;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailOutputPortResult;
+import static com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserOutputPortCommand;
+import static com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserOutputPortResult;
 
 /**
  * This class provides an implementation of the RegisterUserInputPort
@@ -26,10 +26,10 @@ class RegisterUserService implements RegisterUserInputPort {
     private final LoadUserByEmailOutputPort loadUserByEmailOutputPort;
 
     @Override
-    public RegisterUserResult registerUser(RegisterUserCommand registerUserCommand) {
-        Optional<LoadUserByEmailResult> possibleExistingUserOptional = loadUserByEmailOutputPort.loadUserByEmail(
-                new LoadUserByEmailCommand(
-                        registerUserCommand.getEmail()
+    public RegisterUserInputPortResult registerUser(RegisterUserInputPortCommand registerUserInputPortCommand) {
+        Optional<LoadUserByEmailOutputPortResult> possibleExistingUserOptional = loadUserByEmailOutputPort.loadUserByEmail(
+                new LoadUserByEmailOutputPortCommand(
+                        registerUserInputPortCommand.getEmail()
                 )
         );
 
@@ -37,15 +37,15 @@ class RegisterUserService implements RegisterUserInputPort {
             throw new UserManagementException(ErrorCode.USER_ALREADY_EXISTS);
         });
 
-        PersistUserResult persistUserResult = persistUserOutputPort.persistUser(
-                new PersistUserCommand(
-                        registerUserCommand.getUsername(),
-                        registerUserCommand.getPassword(),
-                        registerUserCommand.getEmail()
+        PersistUserOutputPortResult persistUserOutputPortResult = persistUserOutputPort.persistUser(
+                new PersistUserOutputPortCommand(
+                        registerUserInputPortCommand.getUsername(),
+                        registerUserInputPortCommand.getPassword(),
+                        registerUserInputPortCommand.getEmail()
                 )
         );
-        return new RegisterUserResult(
-                persistUserResult.getUserId()
+        return new RegisterUserInputPortResult(
+                persistUserOutputPortResult.getUserId()
         );
     }
 }

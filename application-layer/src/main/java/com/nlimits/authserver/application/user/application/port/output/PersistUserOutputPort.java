@@ -15,14 +15,14 @@ import javax.validation.Valid;
  */
 public interface PersistUserOutputPort {
 
-    PersistUserResult persistUser(PersistUserCommand command);
+    PersistUserOutputPortResult persistUser(PersistUserOutputPortCommand command);
 
     /**
      * Input model for the PersistUserOutputPort
      */
     @Value
     @EqualsAndHashCode(callSuper = false)
-    class PersistUserCommand extends SelfValidating<PersistUserCommand> {
+    class PersistUserOutputPortCommand extends SelfValidating<PersistUserOutputPortCommand> {
         @Valid
         Username username;
 
@@ -32,7 +32,7 @@ public interface PersistUserOutputPort {
         @Valid
         Email email;
 
-        public PersistUserCommand(Username username, Password password, Email email) {
+        public PersistUserOutputPortCommand(Username username, Password password, Email email) {
             this.username = username;
             this.password = password;
             this.email = email;
@@ -44,7 +44,7 @@ public interface PersistUserOutputPort {
      * Output model for the PersistUserOutputPort
      */
     @Value
-    class PersistUserResult {
+    class PersistUserOutputPortResult {
         UserId userId;
     }
 }

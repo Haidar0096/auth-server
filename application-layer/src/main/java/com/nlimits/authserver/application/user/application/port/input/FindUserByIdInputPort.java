@@ -14,18 +14,18 @@ import static com.nlimits.authserver.application.user.domain.User.*;
  */
 public interface FindUserByIdInputPort {
 
-    Optional<FindUserByIdResult> findUserById(FindUserByIdCommand command);
+    Optional<FindUserByIdInputPortResult> findUserById(FindUserByIdInputPortCommand command);
 
     /**
      * Input model for the FindUserByIdInputPort
      */
     @Value
     @EqualsAndHashCode(callSuper = false)
-    class FindUserByIdCommand extends SelfValidating<FindUserByIdCommand> {
+    class FindUserByIdInputPortCommand extends SelfValidating<FindUserByIdInputPortCommand> {
         @Valid
         UserId userId;
 
-        public FindUserByIdCommand(UserId userId) {
+        public FindUserByIdInputPortCommand(UserId userId) {
             this.userId = userId;
             this.validateSelf();
         }
@@ -35,7 +35,7 @@ public interface FindUserByIdInputPort {
      * Output model for the FindUserByIdInputPort
      */
     @Value
-    class FindUserByIdResult {
+    class FindUserByIdInputPortResult {
         UserId userId;
         Username username;
         Email email;

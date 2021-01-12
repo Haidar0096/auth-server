@@ -1,8 +1,8 @@
 package com.nlimits.authserver.adapter.input.web.user;
 
 import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort;
-import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort.RegisterUserCommand;
-import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort.RegisterUserResult;
+import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort.RegisterUserInputPortCommand;
+import com.nlimits.authserver.application.user.application.port.input.RegisterUserInputPort.RegisterUserInputPortResult;
 import com.nlimits.authserver.common.annotation.WebAdapter;
 import com.nlimits.authserver.common.web.Response;
 import com.nlimits.authserver.common.web.ResponseData;
@@ -35,11 +35,11 @@ public class RegisterUserController {
 
     @PostMapping
     public ResponseEntity<Response<RegisterUserResponse>> registerUser(@RequestBody RegisterUserRequest registerUserRequest) {
-        RegisterUserResult registerUserResult = registerUserInputPort.
+        RegisterUserInputPortResult registerUserInputPortResult = registerUserInputPort.
                 registerUser(commandMapper.createRegisterUserCommand(registerUserRequest));
         return ResponseEntity.ok(
                 new Response<>(true,
-                        resultMapper.createRegisterUserResponse(registerUserResult),
+                        resultMapper.createRegisterUserResponse(registerUserInputPortResult),
                         null,
                         null)
         );
@@ -74,7 +74,7 @@ public class RegisterUserController {
         @Mapping(source = "username", target = "username.value")
         @Mapping(source = "password", target = "password.value")
         @Mapping(source = "email", target = "email.value")
-        RegisterUserCommand createRegisterUserCommand(RegisterUserRequest model);
+        RegisterUserInputPortCommand createRegisterUserCommand(RegisterUserRequest model);
     }
 
     /**
@@ -83,7 +83,7 @@ public class RegisterUserController {
     @Mapper(unmappedSourcePolicy = ReportingPolicy.WARN, unmappedTargetPolicy = ReportingPolicy.WARN, componentModel = "spring")
     interface ResultMapper {
         @Mapping(source = "userId.value", target = "userId")
-        RegisterUserResponse createRegisterUserResponse(RegisterUserResult result);
+        RegisterUserResponse createRegisterUserResponse(RegisterUserInputPortResult result);
     }
 
 }

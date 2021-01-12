@@ -16,7 +16,7 @@ import java.util.Optional;
  */
 public interface UpdateUserByIdInputPort {
 
-    void updateUserById(UpdateUserByIdCommand command);
+    void updateUserById(UpdateUserByIdInputPortCommand command);
 
     /**
      * Input model for the UpdateUserByIdInputPort
@@ -25,7 +25,7 @@ public interface UpdateUserByIdInputPort {
      */
     @Value
     @EqualsAndHashCode(callSuper = false)
-    class UpdateUserByIdCommand extends SelfValidating<UpdateUserByIdCommand> {
+    class UpdateUserByIdInputPortCommand extends SelfValidating<UpdateUserByIdInputPortCommand> {
 
         @Valid
         UserId userId;
@@ -36,7 +36,7 @@ public interface UpdateUserByIdInputPort {
 
         Optional<@Valid Email> emailOptional;
 
-        public UpdateUserByIdCommand(UserId userId, Optional<Username> usernameOptional, Optional<Password> passwordOptional, Optional<Email> emailOptional) {
+        public UpdateUserByIdInputPortCommand(UserId userId, Optional<Username> usernameOptional, Optional<Password> passwordOptional, Optional<Email> emailOptional) {
             this.userId = userId;
             this.usernameOptional = usernameOptional;
             this.passwordOptional = passwordOptional;

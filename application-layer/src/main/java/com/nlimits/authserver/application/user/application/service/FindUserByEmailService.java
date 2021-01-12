@@ -7,8 +7,8 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
-import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailCommand;
-import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailResult;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailOutputPortCommand;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailOutputPortResult;
 
 /**
  * This class provides an implementation of the FindUserByEmailInputPort
@@ -20,14 +20,14 @@ import static com.nlimits.authserver.application.user.application.port.output.Lo
     private final LoadUserByEmailOutputPort loadUserByEmailOutputPort;
 
     @Override
-    public Optional<FindUserByEmailResult> findUserByEmail(FindUserByEmailCommand command) {
-        Optional<LoadUserByEmailResult> loadUserByEmailResultOptional =
+    public Optional<FindUserByEmailInputPortResult> findUserByEmail(FindUserByEmailInputPortCommand command) {
+        Optional<LoadUserByEmailOutputPortResult> loadUserByEmailResultOptional =
                 loadUserByEmailOutputPort.loadUserByEmail(
-                        new LoadUserByEmailCommand(command.getEmail())
+                        new LoadUserByEmailOutputPortCommand(command.getEmail())
                 );
         return loadUserByEmailResultOptional.map(
                 loadUserByEmailResult ->
-                        new FindUserByEmailResult(
+                        new FindUserByEmailInputPortResult(
                                 loadUserByEmailResult.getUserId(),
                                 loadUserByEmailResult.getUsername(),
                                 loadUserByEmailResult.getEmail()

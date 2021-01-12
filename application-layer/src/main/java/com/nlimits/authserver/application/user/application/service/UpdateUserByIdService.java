@@ -10,8 +10,8 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
-import static com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdCommand;
-import static com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdResult;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdOutputPortCommand;
+import static com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdOutputPortResult;
 
 /**
  * This class provides an implementation of the UpdateUserByIdInputPort
@@ -24,12 +24,12 @@ class UpdateUserByIdService implements UpdateUserByIdInputPort {
     private final LoadUserByIdOutputPort loadUserByIdOutputPort;
 
     @Override
-    public void updateUserById(UpdateUserByIdCommand command) {
-        Optional<LoadUserByIdResult> loadUserByIdResultOptional =
-                loadUserByIdOutputPort.loadUserById(new LoadUserByIdCommand(command.getUserId()));
+    public void updateUserById(UpdateUserByIdInputPortCommand command) {
+        Optional<LoadUserByIdOutputPortResult> loadUserByIdResultOptional =
+                loadUserByIdOutputPort.loadUserById(new LoadUserByIdOutputPortCommand(command.getUserId()));
         loadUserByIdResultOptional.orElseThrow(() -> new UserManagementException(ErrorCode.USER_DOES_NOT_EXIST));
         updateUserByIdOutputPort.updateUserById(
-                new UpdateUserByIdOutputPort.UpdateUserByIdCommand(
+                new UpdateUserByIdOutputPort.UpdateUserByIdOutputPortCommand(
                         command.getUserId(),
                         command.getUsernameOptional(),
                         command.getPasswordOptional(),

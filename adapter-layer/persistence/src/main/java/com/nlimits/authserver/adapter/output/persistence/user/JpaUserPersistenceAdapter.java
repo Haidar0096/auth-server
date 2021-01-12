@@ -26,21 +26,21 @@ class JpaUserPersistenceAdapter implements PersistUserOutputPort, LoadUserByEmai
      * i.e. the caller of this method must first make sure that the user exists or else unwanted results may occur.
      */
     @Override
-    public PersistUserResult persistUser(PersistUserCommand command) {
+    public PersistUserOutputPortResult persistUser(PersistUserOutputPortCommand command) {
         LocalDateTime dateCreated = LocalDateTime.now();
         LocalDateTime dateUpdated = LocalDateTime.now();
         JpaUser jpaUser = userMapper.createJpaUser(new User(null, command.getUsername(), command.getPassword(), command.getEmail()));
         jpaUser.setDateCreated(dateCreated);
         jpaUser.setDateUpdated(dateUpdated);
         JpaUser persistedUser = jpaUserRepository.save(jpaUser);
-        return new PersistUserResult(new UserId(persistedUser.getId()));
+        return new PersistUserOutputPortResult(new UserId(persistedUser.getId()));
     }
 
     @Override
-    public Optional<LoadUserByEmailResult> loadUserByEmail(LoadUserByEmailCommand command) {
+    public Optional<LoadUserByEmailOutputPortResult> loadUserByEmail(LoadUserByEmailOutputPortCommand command) {
         Optional<JpaUser> queriedUserOptional = jpaUserRepository.findByEmail(command.getEmail().getValue());
         return queriedUserOptional.map(queriedUser
-                        -> new LoadUserByEmailResult(
+                        -> new LoadUserByEmailOutputPortResult(
                         new UserId(queriedUser.getId()),
                         new Username(queriedUser.getUsername()),
                         new Email(queriedUser.getEmail())
@@ -49,10 +49,10 @@ class JpaUserPersistenceAdapter implements PersistUserOutputPort, LoadUserByEmai
     }
 
     @Override
-    public Optional<LoadUserByIdResult> loadUserById(LoadUserByIdCommand command) {
+    public Optional<LoadUserByIdOutputPortResult> loadUserById(LoadUserByIdOutputPortCommand command) {
         Optional<JpaUser> queriedUserOptional = jpaUserRepository.findById(command.getUserId().getValue());
         return queriedUserOptional.map(queriedUser
-                        -> new LoadUserByIdResult(
+                        -> new LoadUserByIdOutputPortResult(
                         new UserId(queriedUser.getId()),
                         new Username(queriedUser.getUsername()),
                         new Email(queriedUser.getEmail())
@@ -61,7 +61,7 @@ class JpaUserPersistenceAdapter implements PersistUserOutputPort, LoadUserByEmai
     }
 
     @Override
-    public void deleteUserById(DeleteUserByIdCommand command) {
+    public void deleteUserById(DeleteUserByIdOutputPortCommand command) {
         jpaUserRepository.deleteById(command.getUserId().getValue());
     }
 
@@ -69,7 +69,7 @@ class JpaUserPersistenceAdapter implements PersistUserOutputPort, LoadUserByEmai
      * Caller of this method must make sure first that the user exists already or else an exception will be thrown
      */
     @Override
-    public void updateUserById(UpdateUserByIdCommand command) {
+    public void updateUserById(UpdateUserByIdOutputPortCommand command) {
         Optional<JpaUser> jpaUserOptional = jpaUserRepository.findById(command.getUserId().getValue());
         JpaUser jpaUser = jpaUserOptional.get();
         command.getUsernameOptional().ifPresent(usernameOptional -> jpaUser.setUsername(usernameOptional.getValue()));

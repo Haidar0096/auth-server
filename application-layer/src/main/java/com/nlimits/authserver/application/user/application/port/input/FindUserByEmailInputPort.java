@@ -15,18 +15,18 @@ import java.util.Optional;
  */
 public interface FindUserByEmailInputPort {
 
-    Optional<FindUserByEmailResult> findUserByEmail(FindUserByEmailCommand command);
+    Optional<FindUserByEmailInputPortResult> findUserByEmail(FindUserByEmailInputPortCommand command);
 
     /**
      * Input model for the FindUserByEmailInputPort
      */
     @Value
     @EqualsAndHashCode(callSuper = false)
-    class FindUserByEmailCommand extends SelfValidating<FindUserByEmailCommand> {
+    class FindUserByEmailInputPortCommand extends SelfValidating<FindUserByEmailInputPortCommand> {
         @Valid
         Email email;
 
-        public FindUserByEmailCommand(Email email) {
+        public FindUserByEmailInputPortCommand(Email email) {
             this.email = email;
             this.validateSelf();
         }
@@ -36,7 +36,7 @@ public interface FindUserByEmailInputPort {
      * Output model for the FindUserByEmailInputPort
      */
     @Value
-    class FindUserByEmailResult {
+    class FindUserByEmailInputPortResult {
         UserId userId;
         Username username;
         Email email;
