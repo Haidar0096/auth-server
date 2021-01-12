@@ -12,6 +12,9 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
+/**
+ * This class provides an implementation of the DeleteUserByIdInputPort
+ */
 @InputPortImpl
 @RequiredArgsConstructor
 class DeleteUserByIdService implements DeleteUserByIdInputPort {
@@ -30,4 +33,3 @@ class DeleteUserByIdService implements DeleteUserByIdInputPort {
     }
 }
 
-//todo write documentation for this class

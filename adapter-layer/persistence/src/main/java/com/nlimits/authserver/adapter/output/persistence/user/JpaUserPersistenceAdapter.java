@@ -10,6 +10,9 @@ import java.util.Optional;
 
 import static com.nlimits.authserver.application.user.domain.User.*;
 
+/**
+ * This class implements the different output ports used for CRUD operations on the User model
+ */
 @PersistenceAdapter
 @RequiredArgsConstructor
 class JpaUserPersistenceAdapter implements PersistUserOutputPort, LoadUserByEmailOutputPort,
@@ -75,4 +78,3 @@ class JpaUserPersistenceAdapter implements PersistUserOutputPort, LoadUserByEmai
     }
 }
 
-//todo write documentation for this class

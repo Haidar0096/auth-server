@@ -15,6 +15,9 @@ import static com.nlimits.authserver.application.user.application.port.output.Lo
 import static com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserCommand;
 import static com.nlimits.authserver.application.user.application.port.output.PersistUserOutputPort.PersistUserResult;
 
+/**
+ * This class provides an implementation of the RegisterUserInputPort
+ */
 @InputPortImpl
 @RequiredArgsConstructor
 class RegisterUserService implements RegisterUserInputPort {
@@ -47,4 +50,3 @@ class RegisterUserService implements RegisterUserInputPort {
     }
 }
 
-//todo write documentation for this class

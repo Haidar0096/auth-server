@@ -9,10 +9,16 @@ import java.util.Optional;
 
 import static com.nlimits.authserver.application.user.domain.User.*;
 
+/**
+ * Contract for querying the User by Id
+ */
 public interface FindUserByIdInputPort {
 
     Optional<FindUserByIdResult> findUserById(FindUserByIdCommand command);
 
+    /**
+     * Input model for the FindUserByIdInputPort
+     */
     @Value
     @EqualsAndHashCode(callSuper = false)
     class FindUserByIdCommand extends SelfValidating<FindUserByIdCommand> {
@@ -25,6 +31,9 @@ public interface FindUserByIdInputPort {
         }
     }
 
+    /**
+     * Output model for the FindUserByIdInputPort
+     */
     @Value
     class FindUserByIdResult {
         UserId userId;
@@ -33,4 +42,3 @@ public interface FindUserByIdInputPort {
     }
 }
 
-//todo write documentation for this class

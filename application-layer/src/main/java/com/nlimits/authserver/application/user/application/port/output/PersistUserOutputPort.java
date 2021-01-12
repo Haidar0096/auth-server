@@ -10,10 +10,16 @@ import lombok.Value;
 
 import javax.validation.Valid;
 
+/**
+ * Contract for persisting the User
+ */
 public interface PersistUserOutputPort {
 
     PersistUserResult persistUser(PersistUserCommand command);
 
+    /**
+     * Input model for the PersistUserOutputPort
+     */
     @Value
     @EqualsAndHashCode(callSuper = false)
     class PersistUserCommand extends SelfValidating<PersistUserCommand> {
@@ -34,10 +40,12 @@ public interface PersistUserOutputPort {
         }
     }
 
+    /**
+     * Output model for the PersistUserOutputPort
+     */
     @Value
     class PersistUserResult {
         UserId userId;
     }
 }
 
-//todo write documentation for this class

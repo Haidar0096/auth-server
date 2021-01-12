@@ -12,11 +12,15 @@ import lombok.Value;
 import javax.validation.Valid;
 import java.util.Optional;
 
+/**
+ * Contract for updating the user by Id
+ */
 public interface UpdateUserByIdOutputPort {
 
     void updateUserById(UpdateUserByIdCommand updateUserByIdCommand);
 
     /**
+     * Input model for the UpdateUserByIdOutputPort
      * Username, password, and email can be null, but id can't be.
      * However, if the 3 of them are null, the user will not be updated and you will receive success = true, as you can't update the user id, obviously.
      */
@@ -43,5 +47,3 @@ public interface UpdateUserByIdOutputPort {
     }
 
 }
-
-//todo write documentation for this class

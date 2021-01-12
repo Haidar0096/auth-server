@@ -10,9 +10,15 @@ import lombok.Value;
 import javax.validation.Valid;
 import java.util.Optional;
 
+/**
+ * Contract for loading the User by Id
+ */
 public interface LoadUserByIdOutputPort {
     Optional<LoadUserByIdResult> loadUserById(LoadUserByIdCommand command);
 
+    /**
+     * Input model for the LoadUserByIdOutputPort
+     */
     @Value
     @EqualsAndHashCode(callSuper = false)
     class LoadUserByIdCommand extends SelfValidating<LoadUserByIdCommand> {
@@ -25,6 +31,9 @@ public interface LoadUserByIdOutputPort {
         }
     }
 
+    /**
+     * Output model for the LoadUserByIdOutputPort
+     */
     @Value
     class LoadUserByIdResult {
         UserId userId;
@@ -33,4 +42,3 @@ public interface LoadUserByIdOutputPort {
     }
 }
 
-//todo write documentation for this class

@@ -9,6 +9,9 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
 
+/**
+ * This class provides an implementation of the FindUserByIdInputPort
+ */
 @InputPortImpl
 @RequiredArgsConstructor
 class FindUserByIdService implements FindUserByIdInputPort {
@@ -31,4 +34,3 @@ class FindUserByIdService implements FindUserByIdInputPort {
     }
 }
 
-//todo write documentation for this class

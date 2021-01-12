@@ -5,11 +5,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(scanBasePackages = {"com.nlimits.authserver.adapter.in.web",
-        "com.nlimits.authserver.adapter.out.persistence",
-        "com.nlimits.authserver.application"})
-@EnableJpaRepositories(basePackages = "com.nlimits.authserver.adapter.out.persistence")
-@EntityScan("com.nlimits.authserver.adapter.out.persistence")
+
+/**
+ * This is the main app class
+ */
+//@SpringBootApplication(scanBasePackages = {"com.nlimits.authserver.adapter.input.web",
+//        "com.nlimits.authserver.adapter.output.persistence",
+//        "com.nlimits.authserver.application"})
+//@EnableJpaRepositories(basePackages = "com.nlimits.authserver.adapter.output.persistence")
+//@EntityScan("com.nlimits.authserver.adapter.output.persistence")
+@SpringBootApplication
 public class AuthServerApplication {
 
     public static void main(String[] args) {
@@ -17,5 +22,3 @@ public class AuthServerApplication {
     }
 
 }
-
-//todo write documentation for this class

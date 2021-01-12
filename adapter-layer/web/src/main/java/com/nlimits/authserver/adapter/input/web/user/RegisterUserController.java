@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller for registering user requests
+ */
 @WebAdapter
 @RestController
 @RequestMapping("/api/v1/user/register")//todo centralize the url in some config file
@@ -43,6 +46,9 @@ public class RegisterUserController {
     }
 
 
+    /**
+     * web model for the register user request
+     */
     @Getter
     @NoArgsConstructor
     static class RegisterUserRequest {
@@ -51,11 +57,17 @@ public class RegisterUserController {
         String email;
     }
 
+    /**
+     * web model for the register user response
+     */
     @Value
     static class RegisterUserResponse implements ResponseData {
         Long userId;
     }
 
+    /**
+     * Mapper between web model and domain model of the register user command object
+     */
     @Mapper(unmappedSourcePolicy = ReportingPolicy.WARN, unmappedTargetPolicy = ReportingPolicy.WARN, componentModel = "spring")
     interface CommandMapper {
 
@@ -65,6 +77,9 @@ public class RegisterUserController {
         RegisterUserCommand createRegisterUserCommand(RegisterUserRequest model);
     }
 
+    /**
+     * Mapper between web model and domain model of the register user result object
+     */
     @Mapper(unmappedSourcePolicy = ReportingPolicy.WARN, unmappedTargetPolicy = ReportingPolicy.WARN, componentModel = "spring")
     interface ResultMapper {
         @Mapping(source = "userId.value", target = "userId")
@@ -73,4 +88,3 @@ public class RegisterUserController {
 
 }
 
-//todo write documentation for this class

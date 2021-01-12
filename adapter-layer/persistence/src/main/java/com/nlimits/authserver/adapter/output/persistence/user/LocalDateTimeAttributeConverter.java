@@ -6,6 +6,11 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
+/**
+ * Since Jpa does not support LocalDateTime out of the box,
+ * this class converts the TimeStamp (supported type) into LocalDateTime objects
+ * before the model is saved in the database
+ */
 @Converter(autoApply = true)
 public class LocalDateTimeAttributeConverter implements AttributeConverter<LocalDateTime, Timestamp> {
     @Override
@@ -20,4 +25,3 @@ public class LocalDateTimeAttributeConverter implements AttributeConverter<Local
     }
 }
 
-//todo write documentation for this class

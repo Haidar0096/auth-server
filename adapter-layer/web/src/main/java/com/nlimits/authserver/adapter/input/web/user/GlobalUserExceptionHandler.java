@@ -8,6 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+/**
+ * An exception handler class for exceptions thrown during processing data
+ * for User model objects
+ */
 @ControllerAdvice
 public class GlobalUserExceptionHandler {
 
@@ -22,5 +26,4 @@ public class GlobalUserExceptionHandler {
     }
 }
 
-//todo write documentation for this class
 

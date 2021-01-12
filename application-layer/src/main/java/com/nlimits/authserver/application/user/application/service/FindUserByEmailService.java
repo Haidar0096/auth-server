@@ -10,6 +10,9 @@ import java.util.Optional;
 import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailCommand;
 import static com.nlimits.authserver.application.user.application.port.output.LoadUserByEmailOutputPort.LoadUserByEmailResult;
 
+/**
+ * This class provides an implementation of the FindUserByEmailInputPort
+ */
 @InputPortImpl
 @RequiredArgsConstructor
  class FindUserByEmailService implements FindUserByEmailInputPort {
@@ -33,4 +36,3 @@ import static com.nlimits.authserver.application.user.application.port.output.Lo
     }
 }
 
-//todo write documentation for this class

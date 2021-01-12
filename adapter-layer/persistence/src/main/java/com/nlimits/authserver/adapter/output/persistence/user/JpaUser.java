@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ * This class represents the JPA model of the User class
+ */
 @Entity
 @Table(name = "user")
 @Data
@@ -34,4 +37,3 @@ class JpaUser {
     private LocalDateTime dateUpdated;
 }
 
-//todo write documentation for this class

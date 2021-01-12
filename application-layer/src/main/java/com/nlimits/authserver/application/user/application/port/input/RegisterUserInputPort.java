@@ -10,6 +10,9 @@ import lombok.Value;
 
 import javax.validation.Valid;
 
+/**
+ * Contract for registering the user
+ */
 public interface RegisterUserInputPort {
 
     /**
@@ -18,6 +21,10 @@ public interface RegisterUserInputPort {
      */
     RegisterUserResult registerUser(RegisterUserCommand command);
 
+
+    /**
+     * Input model for the RegisterUserInputPort
+     */
     @Value
     @EqualsAndHashCode(callSuper = false)
     class RegisterUserCommand extends SelfValidating<RegisterUserCommand> {
@@ -39,10 +46,12 @@ public interface RegisterUserInputPort {
         }
     }
 
+    /**
+     * Output model for the RegisterUserInputPort
+     */
     @Value
     class RegisterUserResult {
         UserId userId;
     }
 }
 
-//todo write documentation for this class

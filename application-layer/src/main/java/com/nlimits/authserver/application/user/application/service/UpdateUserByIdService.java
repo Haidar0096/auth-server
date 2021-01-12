@@ -13,6 +13,9 @@ import java.util.Optional;
 import static com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdCommand;
 import static com.nlimits.authserver.application.user.application.port.output.LoadUserByIdOutputPort.LoadUserByIdResult;
 
+/**
+ * This class provides an implementation of the UpdateUserByIdInputPort
+ */
 @InputPortImpl
 @RequiredArgsConstructor
 class UpdateUserByIdService implements UpdateUserByIdInputPort {

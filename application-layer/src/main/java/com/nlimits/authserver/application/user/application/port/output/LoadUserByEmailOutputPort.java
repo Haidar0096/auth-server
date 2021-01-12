@@ -10,11 +10,17 @@ import lombok.Value;
 import javax.validation.Valid;
 import java.util.Optional;
 
+/**
+ * Contract for loading the User By email
+ */
 public interface LoadUserByEmailOutputPort {
 
     Optional<LoadUserByEmailResult> loadUserByEmail(LoadUserByEmailCommand command);
 
 
+    /**
+     * Input model for the LoadUserByEmailOutputPort
+     */
     @Value
     @EqualsAndHashCode(callSuper = false)
     class LoadUserByEmailCommand extends SelfValidating<LoadUserByEmailCommand> {
@@ -27,6 +33,9 @@ public interface LoadUserByEmailOutputPort {
         }
     }
 
+    /**
+     * Output model for the LoadUserByEmailOutputPort
+     */
     @Value
     class LoadUserByEmailResult {
         UserId userId;
@@ -35,4 +44,3 @@ public interface LoadUserByEmailOutputPort {
     }
 }
 
-//todo write documentation for this class

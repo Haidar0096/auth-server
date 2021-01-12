@@ -5,6 +5,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 
+/**
+ * A mapper between User model and JpaUser model objects
+ */
 @Mapper(unmappedSourcePolicy = ReportingPolicy.WARN, unmappedTargetPolicy = ReportingPolicy.WARN, componentModel = "spring")
 public interface UserMapper {
 
@@ -23,4 +26,3 @@ public interface UserMapper {
     User createUser(JpaUser jpaUser);
 }
 
-//todo write documentation for this class

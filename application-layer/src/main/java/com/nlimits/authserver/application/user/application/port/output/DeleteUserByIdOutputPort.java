@@ -7,10 +7,16 @@ import lombok.Value;
 
 import javax.validation.Valid;
 
+/**
+ * Contract for deleting the User by Id
+ */
 public interface DeleteUserByIdOutputPort {
 
     void deleteUserById(DeleteUserByIdCommand command);
 
+    /**
+     * Input model of the DeleteUserByIdOutputPort
+     */
     @Value
     @EqualsAndHashCode(callSuper = false)
     class DeleteUserByIdCommand extends SelfValidating<DeleteUserByIdCommand> {
@@ -25,4 +31,3 @@ public interface DeleteUserByIdOutputPort {
 
 }
 
-//todo write documentation for this class

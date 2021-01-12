@@ -10,10 +10,16 @@ import lombok.Value;
 import javax.validation.Valid;
 import java.util.Optional;
 
+/**
+ * Contract for querying the User by Email
+ */
 public interface FindUserByEmailInputPort {
 
     Optional<FindUserByEmailResult> findUserByEmail(FindUserByEmailCommand command);
 
+    /**
+     * Input model for the FindUserByEmailInputPort
+     */
     @Value
     @EqualsAndHashCode(callSuper = false)
     class FindUserByEmailCommand extends SelfValidating<FindUserByEmailCommand> {
@@ -26,6 +32,9 @@ public interface FindUserByEmailInputPort {
         }
     }
 
+    /**
+     * Output model for the FindUserByEmailInputPort
+     */
     @Value
     class FindUserByEmailResult {
         UserId userId;
@@ -34,4 +43,3 @@ public interface FindUserByEmailInputPort {
     }
 }
 
-//todo write documentation for this class
