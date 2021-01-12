@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 /**
  * An exception handler class for exceptions thrown during processing data
  * for User model objects
+ *
+ * It handles errors thrown solely from com.nlimits.authserver.adapter.input.web.user
  */
-@ControllerAdvice
+@ControllerAdvice(basePackageClasses = UserWebLayerConfiguration.class)
 public class GlobalUserExceptionHandler {
 
     @ExceptionHandler(UserManagementException.class)
