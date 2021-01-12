@@ -39,3 +39,5 @@ In this case:
 - A `RegisterUserController` would have as a field a variable of type `RegisterUserInputPort`
 
 - A `RegisterUserService` will have as a field a `PersistUserOutputPort`
+
+![Control Flow](auth_server_control_flow.jpg "Control Flow")
